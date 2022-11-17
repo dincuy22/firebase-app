@@ -1,0 +1,20 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  .dashboard-form {
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .form-item {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
