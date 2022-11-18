@@ -1,6 +1,7 @@
 import { addDoc, collection, doc, getDoc } from "firebase/firestore";
 import { useState } from "react";
 import { useContext, useEffect } from "react";
+import Input from "../../components/Input";
 
 import { AuthContext } from "../../context/AuthContext";
 import { db } from "../../firebase";
@@ -8,6 +9,8 @@ import { createMempelai, getUsers } from "../../methods";
 import "./dashboard.scss";
 
 const Dashboard = () => {
+  const [username, setUsername] = useState("");
+
   const { currentUser } = useContext(AuthContext);
 
   useEffect(() => {
@@ -16,28 +19,22 @@ const Dashboard = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const docRef = await addDoc(collection(db, "waktu"), {
-      tgl: e.target[0].value,
-    });
-    console.log("Document written with ID: ", docRef.id);
-    console.log(typeof e.target[0].value);
+    const namaLengkap = e.target[0].value;
+    const nama = e.target.np.value;
+    console.log(namaLengkap, nama);
   };
 
   return (
     <div className="dashboard">
       <form onSubmit={handleSubmit}>
-        <input
-          type="date"
-          id="start"
-          name="trip-start"
-          value="2018-07-22"
-          min="2018-01-01"
-          max="2018-12-31"
-        />
+        <div className="form-item">
+          <span>Nama Lengkap</span>
+          <input type="text" name="nl" />
+        </div>
+        <input type="text" name="np" />
         <button type="submit">send</button>
       </form>
-      <button onClick={() => getUsers()}>Get Users</button>
-      <button onClick={() => createMempelai()}>Create Mempelai</button>
+      <h1>{username}</h1>
     </div>
   );
 };

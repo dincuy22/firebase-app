@@ -24,17 +24,18 @@ const mempelai = {
 };
 
 const acaraAkad = {
-  id: users.id,
+  id: auto,
   jadwal: {
     tgl: "Sabtu, 10 november 2023",
     pukul: "10:00 wib",
   },
   lokasi: "rumah bapak",
   alamat: "desa sanghiang",
+  mempelai: "id_mempelai"
 };
 
 const acaraResepsi = {
-  id: mempelaiP.id + mempelaiW.id,
+  id: auto,
   jadwal: {
     tgl: "Sabtu, 10 november 2023",
     pukul: "10:00 wib",

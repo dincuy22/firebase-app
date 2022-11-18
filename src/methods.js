@@ -34,7 +34,7 @@ export const getUser = async (userId) => {
 };
 
 // Mempelai
-// CREATE
+// CREATE => addDoc - collection id auto
 export const createMempelai = async (mempelai) => {
   const docRef = await addDoc(collection(db, "mempelai"), mempelai);
 
